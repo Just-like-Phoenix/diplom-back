@@ -8,6 +8,14 @@ namespace diplom_back.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
+            Database.Migrate();
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+
+        //DbSets
     }
 }
